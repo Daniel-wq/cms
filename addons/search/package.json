@@ -1,0 +1,9 @@
+{
+    "csrf_token": "",
+    "name": "search",
+    "title": "搜索",
+    "author": "Daniel",
+    "resume": "搜索",
+    "sql": "create table search_keywords(kid smallint primary key auto_increment,keywords varchar(100),times smallint unsigned);",
+    "preview": "attachment/2017/07/11/54661499780288.jpg"
+}

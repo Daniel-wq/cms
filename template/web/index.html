@@ -1,0 +1,99 @@
+<include file="./template/web/header.html"/>
+<div class="banner">
+  <section class="box">
+    <ul class="texts">
+      <p>打了死结的青春，捆死一颗苍白绝望的灵魂。</p>
+      <p>为自己掘一个坟墓来葬心，红尘一梦，不再追寻。</p>
+      <p>加了锁的青春，不会再因谁而推开心门。</p>
+    </ul>
+    <div class="avatar"><a href="#"><span>Daniel</span></a> </div>
+  </section>
+</div>
+<!--<div class="template">-->
+  <!--<div class="box">-->
+    <!--<h3>-->
+      <!--<p><span>个人博客</span>模板 Templates</p>-->
+    <!--</h3>-->
+    <!--<ul>-->
+      <!--<li><a href="/"  target="_blank"><img src="{{__TEMPLATE__}}/images/01.jpg"></a><span>仿新浪博客风格・梅――古典个人博客模板</span></li>-->
+      <!--<li><a href="/" target="_blank"><img src="{{__TEMPLATE__}}/images/02.jpg"></a><span>黑色质感时间轴html5个人博客模板</span></li>-->
+      <!--<li><a href="/"  target="_blank"><img src="{{__TEMPLATE__}}/images/03.jpg"></a><span>Green绿色小清新的夏天-个人博客模板</span></li>-->
+      <!--<li><a href="/" target="_blank"><img src="{{__TEMPLATE__}}/images/04.jpg"></a><span>女生清新个人博客网站模板</span></li>-->
+      <!--<li><a href="/"  target="_blank"><img src="{{__TEMPLATE__}}/images/02.jpg"></a><span>黑色质感时间轴html5个人博客模板</span></li>-->
+      <!--<li><a href="/"  target="_blank"><img src="{{__TEMPLATE__}}/images/03.jpg"></a><span>Green绿色小清新的夏天-个人博客模板</span></li>-->
+    <!--</ul>-->
+  <!--</div>-->
+<!--</div>-->
+<article>
+  <h2 class="title_tj">
+    <p>文章<span>推荐</span></p>
+  </h2>
+  <div class="bloglist left">
+    <arc rows="4">
+      <h3>
+        <a href="{{$field['url']}}" class="product_title">{{$field['title']}}</a>
+      </h3>
+      <figure><img src="{{$field['thumb']}}"></figure>
+      <ul>
+        <p>{{mb_substr(strip_tags($field['content']),0,150,'utf-8')}}...</p>
+        <a title="/" href="{{$field['url']}}" class="readmore">阅读全文>></a>
+      </ul>
+    <p class="dateview"><span>{{$field['created_at']}}</span><span>作者：{{$field['author']}}</p>
+    </arc>
+
+    <!--分页-->
+    <style>
+      div.pagelist nav ul.pagination li{
+        width: 60px;
+        float: left;
+        text-align: center;
+      }
+    </style>
+    <div class="pagelist">
+      {{$AticleModel->links()}}
+    </div>
+    <!--分页结束-->
+
+  </div>
+  <aside class="right">
+    <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
+      <div class="news">
+        <h3>
+          <p>栏目<span>列表</span></p>
+        </h3>
+        <ul class="rank">
+          <navigation>
+            <li><a href="/c_{{$field['cid']}}.html" title="">{{$field['catname']}}</a></li>
+          </navigation>
+        </ul>
+        <h3 class="ph">
+          <p>点击<span>排行</span></p>
+        </h3>
+        <!--<ul class="paih">-->
+        <ul class="rank">
+          <clicks>
+            <li><a href="{{$field['url']}}" title="">{{$field['title']}}</a></li>
+          </clicks>
+        </ul>
+        <h3 class="links">
+          <p>友情<span>链接</span></p>
+        </h3>
+        <ul class="website">
+          <li><a href="/">
+            <div id="webs">
+              <tag action="links.lists" rows="20">
+                <a href="{{$field['url']}}" target="_blank">{{$field['lname']}}</a>
+              </tag>
+            </div>
+          </a></li>
+        </ul>
+        <br>
+        <strong>
+          扫描二维码关注官方微信账号
+        </strong>
+        <a href="/" class="weixin"><img src="{{__TEMPLATE__}}/images/weixin.jpg"></a>
+      </div>
+  </aside>
+</article>
+<!--底部-->
+<include file="./template/web/footer.html"/>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>寻梦</title>
+    <!--<meta name="keywords" content="个人博客模板,博客模板" />-->
+    <!--<meta name="description" content="寻梦主题的个人博客模板，优雅、稳重、大气,低调。" />-->
+    <link href="{{__TEMPLATE__}}/css/base.css" rel="stylesheet">
+    <link href="{{__TEMPLATE__}}/css/index.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="{{__TEMPLATE__}}/js/modernizr.js"></script>
+    <![endif]-->
+</head>
+<body>
+<header>
+    <div id="logo"><a href="/"></a></div>
+    <nav class="topnav" id="topnav">
+        <a href="{{__ROOT__}}" <if value="!Request::get('cid')">class="cur"</if> >首页</a>
+        <!--遍历数据库中栏目表数据，让其在页面头部菜单显示-->
+        <navigation>
+            <a href="/c_{{$field['cid']}}.html" <if value="$field['cid'] == Request::get('cid')">class="cur"</if> >{{$field['catname']}}</a>
+        </navigation>
+    </nav>
+</header>

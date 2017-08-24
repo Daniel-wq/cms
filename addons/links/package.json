@@ -1,0 +1,9 @@
+{
+    "csrf_token": "",
+    "name": "links",
+    "title": "友情链接",
+    "author": "daniel",
+    "resume": "友情链接",
+    "sql": "create table links(lid smallint primary key auto_increment,lname varchar(100),url varchar(255),orderby tinyint unsigned default 100);",
+    "preview": "attachment/2017/07/20/53501500539552.jpg"
+}

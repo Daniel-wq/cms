@@ -1,0 +1,83 @@
+<include file="./template/mobile/header.html"/>
+
+<!--主要内容 -->
+    <div class="container-fluid main-container" id="main-container">
+        <div class="row top-title">
+            <div class="col-md-12">
+                <h1 class="page-title">
+                    文章推荐
+                </h1>
+            </div>
+        </div>
+    <!--main Start-->
+    <div class="row">
+        <div class="col-md-12 post-container">
+            <arc rows="5">
+                <h3>
+                    <a href="{{$field['url']}}" class="product_title">{{$field['title']}}</a>
+                </h3>
+                <figure><img style="width: 100%;" src="{{$field['thumb']}}"></figure>
+                <ul>
+                    <p>{{mb_substr(strip_tags($field['content']),0,150,'utf-8')}}...</p>
+                    <a title="/" href="{{$field['url']}}" class="readmore">阅读全文>></a>
+                </ul>
+                <p class="dateview"><span>{{$field['created_at']}}</span><span>作者：{{$field['author']}}</p>
+            </arc>
+
+            <!--分页-->
+            <!--<style>-->
+                <!--div.pagelist nav ul.pagination li{-->
+                    <!--width: 65px;-->
+                    <!--float: left;-->
+                    <!--text-align: center;-->
+                    <!--/*margin-left: 5px;*/-->
+                <!--}-->
+            <!--</style>-->
+            <div class="pagelist">
+                {{$AticleModel->links()}}
+            </div>
+            <!--分页结束-->
+        </div>
+    </div>
+</div>
+<p>友情链接</p>
+</h3>
+<ul class="website">
+    <li><a href="/">
+        <div id="webs">
+            <tag action="links.lists" rows="20">
+                <a href="{{$field['url']}}" target="_blank">{{$field['lname']}}</a>
+            </tag>
+        </div>
+    </a></li>
+</ul>
+
+    <!-- 网站底部 -->
+<include file="./template/mobile/footer.html"/>
+<script src="{{__TEMPLATE__}}/js/bootstrap.min.js"></script>
+<script>
+        /*banner 初始化*/
+        $(window).load(function() {
+         $('#slider').nivoSlider({
+            effect: 'random',        // 过渡效果
+            controlNav: false,       // 是否显示图片导航控制按钮（,2,3... ）
+            pauseOnHover: true,      // 鼠标县浮时是否停止动画
+            manualAdvance: false,    // 是否手动切换 
+            animSpeed: 100,          // 图片过渡时间   
+            pauseTime: 2000,         // 图片显示时间
+            pauseOnHover: false,
+            manualAdvance: false,
+        });
+        });
+    $(document).ready(function(){
+        $('body').show();
+        $('.version').text(NProgress.version);
+        NProgress.start();
+        setTimeout(function() { NProgress.done(); $('.fade').removeClass('out'); }, 1000);
+    })
+    
+</script>
+
+</body>
+
+</html>
